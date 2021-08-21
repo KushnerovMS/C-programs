@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <Windows.h>
+#include <math.h>
+
+int getcoef();
+int chartoint(char c);
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+
+    int a,b,c,d;
+
+    printf("Введите коофициенты квадратного уравнения:\nа=");
+    scanf("%d", &a);
+    printf("b=%d",a);
+
+    printf("b=");
+    scanf("%d", &b);
+
+    printf("c=");
+    scanf("%d", &c);
+
+    if((d = (b*b - 4*a*c))>=0)
+        printf("\nx1 = %.4f;\nx2 = %.4f.",(-b + sqrtf(d))/(2.0f*a),(-b - sqrtf(d))/(2.0f*a));
+    else printf("Нет корней");
+
+    return 0;
+}
+
+int chartoint(char c)
+{
+    return c - '0';
+}
+
+int getcoef()
+{
+    char c;
+    int l = 1,k = 0;
+    if((c = getchar()) == '-')
+        l = -1;
+    else
+        k = k*10 + l*chartoint(c);
+    while ((c = getchar()) != '\n')
+    {
+        k = k*10 + l*chartoint(c);
+    }
+    return k;
+}
