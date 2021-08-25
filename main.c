@@ -3,27 +3,106 @@
 #include <Windows.h>
 #include <math.h>
 
+#define MAXORDER 2
+
+void init();
+void getCoefficients(float k[], int l);
+int getOrder(float k[], int l);
+int getAnswer(float k[], float x[], int n);
+void printAnswer(float x[], int l);
+
 int main()
+{
+    init();
+
+    float k[MAXORDER + 1], x[MAXORDER];
+    int order, rootCount;
+    order = rootCount = 0;
+
+    printf("Give me coefficients of your equation:\n\n");
+
+    getCoefficients(k, MAXORDER + 1);
+
+    order = getOrder(k, MAXORDER + 1);
+
+    rootCount = getAnswer(k, x, order);
+
+    printAnswer(x, rootCount);
+
+    return 0;
+}
+
+void init()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
+}
 
-    int a,b,c,d;
+void getCoefficients(float k[], int l)
+{
+    for(int i = 0; i < l; i++)
+    {
+        printf("%c= ",'a' + i);
+        scanf("%f", &k[l-i-1]);
+    }
+}
 
-    printf("Введите коофициенты квадратного уравнения:\nа=");
-    scanf("%d", &a);
+int getOrder(float k[], int l)
+{
+    int n = 0;
 
-    printf("b=");
-    scanf("%d", &b);
+    for(int i = 0; i < l; i++)
+        if(k[i] != 0)
+            n = i;
 
-    printf("c=");
-    scanf("%d", &c);
+    return n;
+}
 
-    if((d = (b*b - 4*a*c)) > 0)
-        printf("\nx1 = %.4f;\nx2 = %.4f.\n",(-b + sqrt(d))/(2.0*a),(-b - sqrt(d))/(2.0*a));
-    else if(d == 0)
-        printf("\nx = %.4f;\n",-(double)b/(2.0d*a));
-    else printf("Нет корней\n");
-
+int getAnswer(float k[], float x[], int n)
+{
+    switch (n)
+    {
+    case 0 :
+        if (k[0] == 0)
+            return -1;
+        else
+            return 0;
+    case 1 :
+        x[0] = -k[1]/k[0];
+        return 1;
+    case 2 :
+        float d = k[1]*k[1] - 4*k[0]*k[2];
+        if (d > 0)
+        {
+            x[0] = (-k[1] - sqrtf(d))/(2*k[2]);
+            x[1] = (-k[1] + sqrtf(d))/(2*k[2]);
+            return 2;
+        }
+        else if (d == 0)
+        {
+            x[0] = -k[1]/(2*k[2]);
+            return 1;
+        }
+        else
+            return 0;
+    }
     return 0;
+}
+
+void printAnswer(float x[], int l)
+{
+    switch (l)
+    {
+    case -1 :
+        printf("The equation has infinity roots");
+        break;
+    case 0 :
+        printf("The equation has no roots");
+        break;
+    default :
+        for(int i = 0; i < l; i++)
+            printf("\nx%i = %.4f;",i + 1, x[i]);
+        printf("\b.");
+        break;
+    }
 }
