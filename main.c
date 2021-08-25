@@ -5,7 +5,6 @@
 
 #define MAXORDER 2
 
-void init();
 void getCoefficients(float k[], int l);
 int getOrder(float k[], int l);
 int getAnswer(float k[], float x[], int n);
@@ -13,8 +12,6 @@ void printAnswer(float x[], int l);
 
 int main()
 {
-    init();
-
     float k[MAXORDER + 1], x[MAXORDER];
     int order, rootCount;
     order = rootCount = 0;
@@ -30,12 +27,6 @@ int main()
     printAnswer(x, rootCount);
 
     return 0;
-}
-
-void init()
-{
-    SetConsoleCP(1251);
-    SetConsoleOutputCP(1251);
 }
 
 void getCoefficients(float k[], int l)
@@ -94,10 +85,10 @@ void printAnswer(float x[], int l)
     switch (l)
     {
     case -1 :
-        printf("The equation has infinity roots");
+        printf("The equation has infinity roots.");
         break;
     case 0 :
-        printf("The equation has no roots");
+        printf("The equation has no roots.");
         break;
     default :
         for(int i = 0; i < l; i++)
@@ -105,4 +96,5 @@ void printAnswer(float x[], int l)
         printf("\b.");
         break;
     }
+    printf("\n");
 }
