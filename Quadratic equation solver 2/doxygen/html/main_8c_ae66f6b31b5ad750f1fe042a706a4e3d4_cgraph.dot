@@ -1,0 +1,18 @@
+digraph "main"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="main",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The main function."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="getCoefsOfQE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#aee4bf40af12e3fcd89e348ae5ab55abb",tooltip="Gets coefficients from input."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="getCoef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a5442193caf52656b5be15c8a16eb1d9d",tooltip="Gets one coefficient from input."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="getRootsOfQE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#ab2bb425606c98f9b6b31c3b81f1dffed",tooltip="Calculate roots of quadratic equation."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="iszero",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#adbdd230019d3857c0e3212bd74006638",tooltip="Checks if a number is zero."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="printRootsOfQE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#afea917cd6d85dc24da50dd01e54690ec",tooltip="Print answer."];
+}

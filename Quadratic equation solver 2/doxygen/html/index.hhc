@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Группы"><param name="Local" value="modules.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Messages used in program"><param name="Local" value="group__const__strings.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_ENTER_INSTRUCTION"><param name="Local" value="group__const__strings.html#ga58de86764b04416715659cf54f25cd89"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INCORRECT_CANCULATIONS"><param name="Local" value="group__const__strings.html#ga6f3cd0218a65f8b92c3d4af2785743f3"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INCORRECT_COEFFICIENT"><param name="Local" value="group__const__strings.html#gad95cf56def150644436becc248e6b052"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INFINITY_OF_ROOTS"><param name="Local" value="group__const__strings.html#ga14dc10f295f84f96b89e5a24c8dd82ca"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_NO_ROOTS"><param name="Local" value="group__const__strings.html#gab1aeca149aa7dad809b5780558f1eba7"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Precision of calculations"><param name="Local" value="group__root__precision.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="ROOT_PRECISION"><param name="Local" value="group__root__precision.html#ga40b998bb976d4db9d6af957113b34726"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="ROOT_PRECISION_EXP"><param name="Local" value="group__root__precision.html#ga059012d7f0a8be5fc50eb2b50871a985"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Файлы"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Файлы"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="main.c"><param name="Local" value="main_8c.html"><param name="ImageNumber" value="1"></OBJECT>
+      <UL>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getCoef"><param name="Local" value="main_8c.html#a5442193caf52656b5be15c8a16eb1d9d"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getCoefsOfQE"><param name="Local" value="main_8c.html#aee4bf40af12e3fcd89e348ae5ab55abb"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getRootsOfQE"><param name="Local" value="main_8c.html#ab2bb425606c98f9b6b31c3b81f1dffed"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="iszero"><param name="Local" value="main_8c.html#adbdd230019d3857c0e3212bd74006638"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="main"><param name="Local" value="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="printRootsOfQE"><param name="Local" value="main_8c.html#afea917cd6d85dc24da50dd01e54690ec"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="_INFINITY"><param name="Local" value="main_8c.html#a2a433e6e929d0a9badf76192c4f47d64"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_ENTER_INSTRUCTION"><param name="Local" value="group__const__strings.html#ga58de86764b04416715659cf54f25cd89"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INCORRECT_CANCULATIONS"><param name="Local" value="group__const__strings.html#ga6f3cd0218a65f8b92c3d4af2785743f3"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INCORRECT_COEFFICIENT"><param name="Local" value="group__const__strings.html#gad95cf56def150644436becc248e6b052"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_INFINITY_OF_ROOTS"><param name="Local" value="group__const__strings.html#ga14dc10f295f84f96b89e5a24c8dd82ca"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="MSG_NO_ROOTS"><param name="Local" value="group__const__strings.html#gab1aeca149aa7dad809b5780558f1eba7"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ROOT_PRECISION"><param name="Local" value="group__root__precision.html#ga40b998bb976d4db9d6af957113b34726"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="ROOT_PRECISION_EXP"><param name="Local" value="group__root__precision.html#ga059012d7f0a8be5fc50eb2b50871a985"><param name="ImageNumber" value="11"></OBJECT>
+      </UL>
+    </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Список членов всех файлов"><param name="Local" value="globals.html"><param name="ImageNumber" value="11"></OBJECT>
+    <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Указатель"><param name="Local" value="globals.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Функции"><param name="Local" value="globals_func.html"><param name="ImageNumber" value="11"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Name" value="Переменные"><param name="Local" value="globals_vars.html"><param name="ImageNumber" value="11"></OBJECT>
+    </UL>
+  </UL>
+</UL>
+</BODY>
+</HTML>

@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadratic equation solver 2: Файл main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="D:\MathJax-master/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadratic equation solver 2<span id="projectnumber">&#160;1.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.2 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',false,false,'search.php','Поиск');
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Файл main.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Main program file.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &lt;float.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;unitTest.c&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#amain_8c" alt=""/></div>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:aee4bf40af12e3fcd89e348ae5ab55abb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aee4bf40af12e3fcd89e348ae5ab55abb">getCoefsOfQE</a> (double *a, double *b, double *c)</td></tr>
+<tr class="memdesc:aee4bf40af12e3fcd89e348ae5ab55abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets coefficients from input.  <a href="main_8c.html#aee4bf40af12e3fcd89e348ae5ab55abb">Подробнее...</a><br /></td></tr>
+<tr class="separator:aee4bf40af12e3fcd89e348ae5ab55abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bb425606c98f9b6b31c3b81f1dffed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ab2bb425606c98f9b6b31c3b81f1dffed">getRootsOfQE</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
+<tr class="memdesc:ab2bb425606c98f9b6b31c3b81f1dffed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate roots of quadratic equation.  <a href="main_8c.html#ab2bb425606c98f9b6b31c3b81f1dffed">Подробнее...</a><br /></td></tr>
+<tr class="separator:ab2bb425606c98f9b6b31c3b81f1dffed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea917cd6d85dc24da50dd01e54690ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#afea917cd6d85dc24da50dd01e54690ec">printRootsOfQE</a> (int rCount, double x1, double x2)</td></tr>
+<tr class="memdesc:afea917cd6d85dc24da50dd01e54690ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print answer.  <a href="main_8c.html#afea917cd6d85dc24da50dd01e54690ec">Подробнее...</a><br /></td></tr>
+<tr class="separator:afea917cd6d85dc24da50dd01e54690ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdd230019d3857c0e3212bd74006638"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#adbdd230019d3857c0e3212bd74006638">iszero</a> (double value)</td></tr>
+<tr class="memdesc:adbdd230019d3857c0e3212bd74006638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a number is zero.  <a href="main_8c.html#adbdd230019d3857c0e3212bd74006638">Подробнее...</a><br /></td></tr>
+<tr class="separator:adbdd230019d3857c0e3212bd74006638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The main function.  <a href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5442193caf52656b5be15c8a16eb1d9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a5442193caf52656b5be15c8a16eb1d9d">getCoef</a> (double *coeff, char name)</td></tr>
+<tr class="memdesc:a5442193caf52656b5be15c8a16eb1d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets one coefficient from input.  <a href="main_8c.html#a5442193caf52656b5be15c8a16eb1d9d">Подробнее...</a><br /></td></tr>
+<tr class="separator:a5442193caf52656b5be15c8a16eb1d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:gad95cf56def150644436becc248e6b052"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__const__strings.html#gad95cf56def150644436becc248e6b052">MSG_INCORRECT_COEFFICIENT</a> = &quot;This can't be coefficient. Give me normal coefficient:\n&quot;</td></tr>
+<tr class="separator:gad95cf56def150644436becc248e6b052"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14dc10f295f84f96b89e5a24c8dd82ca"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__const__strings.html#ga14dc10f295f84f96b89e5a24c8dd82ca">MSG_INFINITY_OF_ROOTS</a> = &quot;Equation has infinity of roots\n&quot;</td></tr>
+<tr class="separator:ga14dc10f295f84f96b89e5a24c8dd82ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1aeca149aa7dad809b5780558f1eba7"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__const__strings.html#gab1aeca149aa7dad809b5780558f1eba7">MSG_NO_ROOTS</a> = &quot;Equation has no roots\n&quot;</td></tr>
+<tr class="separator:gab1aeca149aa7dad809b5780558f1eba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f3cd0218a65f8b92c3d4af2785743f3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__const__strings.html#ga6f3cd0218a65f8b92c3d4af2785743f3">MSG_INCORRECT_CANCULATIONS</a> = &quot;Something went wrong with calculations\n&quot;</td></tr>
+<tr class="separator:ga6f3cd0218a65f8b92c3d4af2785743f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58de86764b04416715659cf54f25cd89"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__const__strings.html#ga58de86764b04416715659cf54f25cd89">MSG_ENTER_INSTRUCTION</a> = &quot;Give me coefficients of your equation ( ax2 + bx + c = 0):\n\n&quot;</td></tr>
+<tr class="separator:ga58de86764b04416715659cf54f25cd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a433e6e929d0a9badf76192c4f47d64"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2a433e6e929d0a9badf76192c4f47d64">_INFINITY</a> = -1</td></tr>
+<tr class="separator:a2a433e6e929d0a9badf76192c4f47d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga059012d7f0a8be5fc50eb2b50871a985"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__root__precision.html#ga059012d7f0a8be5fc50eb2b50871a985">ROOT_PRECISION_EXP</a> = 6</td></tr>
+<tr class="separator:ga059012d7f0a8be5fc50eb2b50871a985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40b998bb976d4db9d6af957113b34726"><td class="memItemLeft" align="right" valign="top">const double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__root__precision.html#ga40b998bb976d4db9d6af957113b34726">ROOT_PRECISION</a> = pow(0.1, <a class="el" href="group__root__precision.html#ga059012d7f0a8be5fc50eb2b50871a985">ROOT_PRECISION_EXP</a> + 1)</td></tr>
+<tr class="separator:ga40b998bb976d4db9d6af957113b34726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Main program file. </p>
+<dl class="section author"><dt>Автор</dt><dd>KMSprojects </dd></dl>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a5442193caf52656b5be15c8a16eb1d9d" name="a5442193caf52656b5be15c8a16eb1d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5442193caf52656b5be15c8a16eb1d9d">&#9670;&nbsp;</a></span>getCoef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getCoef </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>coeff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets one coefficient from input. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">coeff</td><td>Entered coefficient </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Name of coefficient, which user see</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function ask user to enter coefficient while it won't be number </p>
+
+</div>
+</div>
+<a id="aee4bf40af12e3fcd89e348ae5ab55abb" name="aee4bf40af12e3fcd89e348ae5ab55abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee4bf40af12e3fcd89e348ae5ab55abb">&#9670;&nbsp;</a></span>getCoefsOfQE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getCoefsOfQE </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets coefficients from input. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">a,b,c</td><td>coefficients of quadratic equation</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Function print <a class="el" href="group__const__strings.html#ga58de86764b04416715659cf54f25cd89">MSG_ENTER_INSTRUCTION</a> and three times call <a class="el" href="main_8c.html#a5442193caf52656b5be15c8a16eb1d9d" title="Gets one coefficient from input.">getCoef()</a> </p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_aee4bf40af12e3fcd89e348ae5ab55abb_cgraph.png" border="0" usemap="#amain_8c_aee4bf40af12e3fcd89e348ae5ab55abb_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="ab2bb425606c98f9b6b31c3b81f1dffed" name="ab2bb425606c98f9b6b31c3b81f1dffed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bb425606c98f9b6b31c3b81f1dffed">&#9670;&nbsp;</a></span>getRootsOfQE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getRootsOfQE </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>x2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate roots of quadratic equation. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a,b,c</td><td>coefficients of quadratic equation </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">x1,x2</td><td>roots of quadratic equation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>count of roots</dd></dl>
+<p>At first function calculate \( D \) - discriminant ( \( D = b^2 - 4\cdot a\cdot c\)). <br  />
+ <br  />
+Then <b>if</b> \( D &lt; 0 \) equation haven't got roots; <br  />
+ <br  />
+<b>If</b> \( D &lt; ( 2\cdot x\cdot \varepsilon)^2 \) <b>\( \left( \text{that is we check} \dfrac{\sqrt{D}}{2\cdot a} &lt; \varepsilon \right) \)</b> it can get \( c = 0 \) and calculate \( x = - \dfrac{d}{2\cdot a} \); <br  />
+ <br  />
+ <b>If</b> \( \left| a\cdot c^2 \right| &lt; \varepsilon \cdot \left| b^3 \right| \) \( \left( \text{that is we check} \left| \dfrac{a\cdot c^2}{b^3} \right| &lt; \varepsilon \right) \) it can get \( a = 0 \) and calculate \( x = - \dfrac{c}{b} \) which is easy to prove; <br  />
+ <br  />
+ <b>If</b> \( b = 0 \) it is return if \( c = 0 \) 0 else <a class="el" href="main_8c.html#a2a433e6e929d0a9badf76192c4f47d64">_INFINITY</a> <br  />
+ <br  />
+ <b>in</b> <b>other</b> <b>cases</b> it calculate \( x_1 = \dfrac{- b - \sqrt D}{2\cdot a} \) , \( x_2 = \dfrac{- b + \sqrt D}{2\cdot a} \) <br  />
+ <br  />
+( \( \varepsilon = \) <a class="el" href="group__root__precision.html#ga40b998bb976d4db9d6af957113b34726">ROOT_PRECISION</a>) </p>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_ab2bb425606c98f9b6b31c3b81f1dffed_cgraph.png" border="0" usemap="#amain_8c_ab2bb425606c98f9b6b31c3b81f1dffed_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="adbdd230019d3857c0e3212bd74006638" name="adbdd230019d3857c0e3212bd74006638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdd230019d3857c0e3212bd74006638">&#9670;&nbsp;</a></span>iszero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iszero </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if a number is zero. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>is value zero</dd></dl>
+<p>This function checks if \( |value| &lt; 1 \) and then checks if \( |value|\cdot \) max bound of double \( &lt;1 \) , else returns 0 </p>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The main function. </p>
+<dl class="section return"><dt>Возвращает</dt><dd>always 0 This function calls the functions of accepting coefficients, calculating roots and outputting the result. Also obtained coefficients and calculated roots are stored there. </dd></dl>
+<div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8c_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="afea917cd6d85dc24da50dd01e54690ec" name="afea917cd6d85dc24da50dd01e54690ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea917cd6d85dc24da50dd01e54690ec">&#9670;&nbsp;</a></span>printRootsOfQE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printRootsOfQE </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print answer. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">rCount</td><td>count of roots </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x1,x2</td><td>roots</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If <a class="el" href="">rCount</a> \( = 1 \) , it get \( x \) from \( x_1 \) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a2a433e6e929d0a9badf76192c4f47d64" name="a2a433e6e929d0a9badf76192c4f47d64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a433e6e929d0a9badf76192c4f47d64">&#9670;&nbsp;</a></span>_INFINITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int _INFINITY = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >Determine of infinity number of roots (because always number of roots &gt;= 0) </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Quadratic equation solver 2. Последние изменения: Пн 20 Сен 2021 22:07:28. Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2
+</small></address>
+</body>
+</html>
