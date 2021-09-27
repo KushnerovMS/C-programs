@@ -22,7 +22,7 @@ const char *MSG_INCORRECT_CANCULATIONS = "Something went wrong with calculations
 const char *MSG_ENTER_INSTRUCTION = "Give me coefficients of your equation ( ax2 + bx + c = 0):\n\n";   /**< Message displayed when user should enter coefficients of equation */
 ///@}
 
-const int _INFINITY = -1;/**< Determine of infinity number of roots (because always number of roots >= 0) */
+const int INFINITY_ = -1;/**< Determine of infinity number of roots (because always number of roots >= 0) */
 
 /** @defgroup root_precision Precision of calculations
     @{
@@ -31,10 +31,12 @@ const int ROOT_PRECISION_EXP = 6;/**< Count of digits after point in output */
 const double ROOT_PRECISION = pow(0.1, ROOT_PRECISION_EXP + 1);/**< Precision with which the roots of the equation are calculated */
 ///@}
 
-void getCoefsOfQE(double *a, double *b, double *c);
-int getRootsOfQE(double a, double b, double c, double *x1, double *x2);
-void printRootsOfQE(int, double x1, double x2);
-int iszero(double value);
+
+//QE - Quadratic Equation
+void getCoefsOfQE (double *a, double *b, double *c);
+int getRootsOfQE (double a, double b, double c, double *x1, double *x2);
+void printRootsOfQE (int, double x1, double x2);
+int iszero (double value);
 
 /** @brief The main function
  *  @return always 0
@@ -45,19 +47,16 @@ int main()
 {
 //    unitTest((int (*)(double, double, double, double*, double*))getRootsOfQE);
 
-    double a, b, c;
+    double a = NAN, b = NAN, c = NAN;
 
-    a = b = c = 0.0;
-
-    getCoefsOfQE(&a, &b, &c);
+    getCoefsOfQE (&a, &b, &c);
 
     int rCount = 0;
-    double x1, x2;
-    x1 = x2 = 0;
+    double x1 = NAN, x2 = NAN;
 
-    rCount = getRootsOfQE(a, b, c, &x1, &x2);
+    rCount = getRootsOfQE (a, b, c, &x1, &x2);
 
-    printRootsOfQE(rCount, x1, x2);
+    printRootsOfQE (rCount, x1, x2);
 
     return 0;
 }
@@ -69,18 +68,18 @@ int main()
  *
  *  Function ask user to enter coefficient while it won't be number
  */
-void getCoef(double *coeff, char name)
+void getCoef (double *coeff, char name)
 {
-    assert(coeff);
+    assert (coeff);
 
     int noCoeff = true;
-    while(noCoeff)
+    while (noCoeff)
     {
-        printf("%c=", name);
-        if(!scanf("%lf", coeff) || getchar() != '\n')
+        printf ("%c = ", name);
+        if(!scanf ("%lf", coeff) || getchar() != '\n')
         {
-            printf(MSG_INCORRECT_COEFFICIENT);
-            while(getchar() != '\n')
+            printf (MSG_INCORRECT_COEFFICIENT);
+            while (getchar() != '\n')
                 ;
         }
         else
@@ -95,9 +94,9 @@ void getCoef(double *coeff, char name)
  *
  * This function checks if @f$ |value| < 1 @f$ and then checks if \f$ |value|\cdot \f$ max bound of double \f$ <1 \f$ , else returns 0
  */
-int iszero(double value)
+int iszero (double value)
 {
-    return (fabs(value) < 1) && (fabs(value*DBL_MAX) < 1);
+    return (fabs (value) < 1) && (fabs (value * DBL_MAX) < 1);
 }
 
 /** @brief Gets coefficients from input
@@ -106,12 +105,12 @@ int iszero(double value)
  *
  * Function print @link MSG_ENTER_INSTRUCTION @endlink and three times call getCoef()
  */
-void getCoefsOfQE(double *a, double *b, double *c)
+void getCoefsOfQE (double *a, double *b, double *c)
 {
-    printf("%s", MSG_ENTER_INSTRUCTION);
-    getCoef(a, 'a');
-    getCoef(b, 'b');
-    getCoef(c, 'c');
+    printf ("%s", MSG_ENTER_INSTRUCTION);
+    getCoef (a, 'a');
+    getCoef (b, 'b');
+    getCoef (c, 'c');
 }
 
 /** @brief Calculate roots of quadratic equation
@@ -135,35 +134,42 @@ void getCoefsOfQE(double *a, double *b, double *c)
 * @b in @b other @b cases it calculate \f$ x_1 = \dfrac{- b - \sqrt D}{2\cdot a} \f$ , \f$ x_2 = \dfrac{- b + \sqrt D}{2\cdot a} \f$ \n \n
 * (\f$ \varepsilon = \f$ \link ROOT_PRECISION \endlink)
  */
-int getRootsOfQE(double a, double b, double c, double *x1, double *x2)
+int getRootsOfQE (double a, double b, double c, double *x1, double *x2)
 {
-    assert(x1);
-    assert(x2);
+    assert (isfinite (a));
+    assert (isfinite (b));
+    assert (isfinite (c));
+
+    assert (x1);
+    assert (x2);
 
     double D = b * b - 4 * a * c;
 
-    if(D < 0)
+    if (D < 0)
         return 0;
-    else if(D < pow(2 * a * ROOT_PRECISION, 2))
+
+    // Check if sqrt (D) / (2 * a) < ROOT_PRECISION
+    else if (D < pow(2 * a * ROOT_PRECISION, 2))
     {
-        *x1 = -b/(2 * a);
+        *x1 = -b / (2 * a);
         return 1;
     }
     else
     {
-        if(fabs(a * c * c) < fabs(ROOT_PRECISION * b * b * b))
+        //Check, can we calculate x1 = -c / b, using Taylor expansion
+        if (fabs(a * c * c) < fabs(ROOT_PRECISION * b * b * b))
         {
-            *x1 = -c/b;
+            *x1 = -c / b;
             return 1;
         }
-        else if(iszero(b))
+        else if (iszero(b))
         {
-            return (iszero(c))? _INFINITY : 0;
+            return (iszero (c))? INFINITY_ : 0;
         }
         else
         {
-            *x1 = (-b - sqrt(D))/(2 * a);
-            *x2 = (-b + sqrt(D))/(2 * a);
+            *x1 = (-b - sqrt(D)) / (2 * a);
+            *x2 = (-b + sqrt(D)) / (2 * a);
             return 2;
         }
     }
@@ -176,25 +182,28 @@ int getRootsOfQE(double a, double b, double c, double *x1, double *x2)
  *
  * If \link rCount \endlink \f$ = 1 \f$ , it get \f$ x \f$ from \f$ x_1 \f$
  */
-void printRootsOfQE(int rCount, double x1, double x2)
+void printRootsOfQE (int rCount, double x1, double x2)
 {
-    switch(rCount)
+    assert (isfinite (x1));
+    assert (isfinite (x2));
+
+    switch (rCount)
     {
-    case _INFINITY:
-        printf("%s", MSG_INFINITY_OF_ROOTS);
+    case INFINITY_:
+        printf ("%s", MSG_INFINITY_OF_ROOTS);
         break;
     case 0:
-        printf("%s", MSG_NO_ROOTS);
+        printf ("%s", MSG_NO_ROOTS);
         break;
     case 1:
-        printf("x = %.*e\n", ROOT_PRECISION_EXP, x1);
+        printf ("x = %.*e\n", ROOT_PRECISION_EXP, x1);
         break;
     case 2:
-        printf("x1 = %.*e\n", ROOT_PRECISION_EXP, x1);
-        printf("x2 = %.*e\n", ROOT_PRECISION_EXP, x2);
+        printf ("x1 = %.*e\n", ROOT_PRECISION_EXP, x1);
+        printf ("x2 = %.*e\n", ROOT_PRECISION_EXP, x2);
         break;
     default:
-        printf("%s", MSG_INCORRECT_CANCULATIONS);
+        printf ("%s", MSG_INCORRECT_CANCULATIONS);
         break;
     }
 }
