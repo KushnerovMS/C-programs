@@ -3,9 +3,9 @@
 #include <string.h>
 #include <assert.h>
 
-enum
+enum Error
 {
-    SUCCESS = 1,
+    SUCCESS = 0,
     MEMORY_ALLOCATION_ERROR,
     OUT_OF_BOUNDS_ERROR,
     DESTRUCTED_STACK,
@@ -14,7 +14,7 @@ enum
 };
 
 
-const int DATA_POISON = 0xF0;
+const int DATA_POISON = 666;
 void *const POINTER_POISON = (void*)13;
 
 const int MAX_SIZE = 256;
@@ -71,7 +71,7 @@ int StackPush(Stack * stack, const void* value)
 {
     assert(stack);
 
-    printf("%d ", stack -> Capacity);
+    //printf("%d ", stack -> Capacity);
 
     int error = SUCCESS;
     if(stack -> Size >= stack -> Capacity)
@@ -80,7 +80,7 @@ int StackPush(Stack * stack, const void* value)
             return error;
     }
 
-    printf("%d ", stack -> Capacity);
+    //printf("%d ", stack -> Capacity);
 
     memcpy(stack -> Data + (stack -> Size ++) * stack -> ItemSize,
            value,
@@ -97,14 +97,14 @@ int StackPop(Stack * stack, void * value)
         return NO_ITEMS_ERROR;
     else
     {
-        printf("%d ", stack -> Capacity);
+        //printf("%d ", stack -> Capacity);
 
         memcpy(value,
                stack -> Data + (-- stack -> Size) * stack -> ItemSize,
                stack -> ItemSize);
         stackRealocate(stack, stack -> Size);
 
-        printf("%d ", stack -> Capacity);
+        //printf("%d ", stack -> Capacity);
 
         return SUCCESS;
     }
@@ -138,10 +138,12 @@ int stackRealocate(Stack * stack, size_t capacity)
                 calcCapacity = stack -> Capacity / (1 + STEP_INCREASE);
         }
         else
+        {
             if(stack -> Capacity - 2 * MAX_STEP < capacity)
                 return SUCCESS;
             else
                 calcCapacity = stack -> Capacity - MAX_STEP;
+        }
     }
 
 

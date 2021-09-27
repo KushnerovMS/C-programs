@@ -4,70 +4,70 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 <body>
 <tt>
-Build started on: <u>24-09-2021 at 22:35.47</u><br />
-Build ended on: <u>24-09-2021 at 22:35.48</u><p />
+Build started on: <u>27-09-2021 at 22:29.10</u><br />
+Build ended on: <u>27-09-2021 at 22:29.11</u><p />
 <b>-------------- Build: Debug in Stack (compiler: GNU GCC (MinGW) Compiler - Strict + Save (SINGLE FILES ONLY, REGUIRES GIT))---------------</b><br />
-g++git-auto.bat "D:\C projects\Stack\main.cpp" -o bin\Debug\Stack.exe  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
+g++git-auto.bat "D:\C projects\Onegin\main.cpp" -o bin\Debug\Stack.exe  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
 ------------------------------------------------------------------------------------------------------<br />
 Compilation ERRORS:<br />
 <br />
-In file included from D:\C projects\Stack\main.cpp:3:0:<br />
-D:\C projects\Stack\stack.cpp: In function 'int StackCtor(Stack*, size_t, int)':<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:35:5: warning: no previous declaration for 'int StackCtor(Stack*, size_t, int)' [-Wmissing-declarations]</font><br />
- int StackCtor (Stack * stack, const size_t capacity, const int itemSize)<br />
+D:\C projects\Onegin\main.cpp: In function 'StringList* getStringList(const char*, Error*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:112:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         if (strNumb &gt;= strList -&gt; length)<br />
+                                   ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:128:22: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+             buf[n++] = c;<br />
+                      ^<br />
+D:\C projects\Onegin\main.cpp: In function 'void printStringList(const StringList*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:166:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for (int i = 0; i &lt; strList -&gt; length; i++)<br />
+                                    ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:168:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         for (int j = 0; j &lt; strList -&gt; item [i] -&gt; length; j++)<br />
+                                                    ^<br />
+D:\C projects\Onegin\main.cpp: In function 'Error saveStringList(const char*, const StringList*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:185:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for (int i = 0; i &lt; strList -&gt; length; i++)<br />
+                                    ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:187:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         for (int j = 0; j &lt; strList -&gt; item [i] -&gt; length; j++)<br />
+                                                    ^<br />
+D:\C projects\Onegin\main.cpp: In function 'int AlphabetCmp(const String**, const String**)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:219:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     while (i1 &lt; (* str1) -&gt; length &amp;&amp; i2 &lt; (* str2) -&gt; length)<br />
+                             ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:219:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     while (i1 &lt; (* str1) -&gt; length &amp;&amp; i2 &lt; (* str2) -&gt; length)<br />
+                                                        ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:232:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     return (i1 &lt; (* str1) -&gt; length)?<br />
+                              ^<br />
+D:\C projects\Onegin\main.cpp: In function 'int isUncmpChar(char)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:274:5: warning: no previous declaration for 'int isUncmpChar(char)' [-Wmissing-declarations]</font><br />
+ int isUncmpChar (const char c)<br />
      ^<br />
-D:\C projects\Stack\stack.cpp: In function 'int StackDtor(Stack*)':<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:51:5: warning: no previous declaration for 'int StackDtor(Stack*)' [-Wmissing-declarations]</font><br />
- int StackDtor(Stack * stack)<br />
+D:\C projects\Onegin\main.cpp: In function 'char tolower_(char)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:283:6: warning: no previous declaration for 'char tolower_(char)' [-Wmissing-declarations]</font><br />
+ char tolower_ (const char c)<br />
+      ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:286:24: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+         return c - 'A' + 'a';<br />
+                        ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:288:26: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+         return tolower (c);<br />
+                          ^<br />
+D:\C projects\Onegin\main.cpp: In function 'int isInformativeStr(const String*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:291:5: warning: no previous declaration for 'int isInformativeStr(const String*)' [-Wmissing-declarations]</font><br />
+ int isInformativeStr (const String * str)<br />
      ^<br />
-D:\C projects\Stack\stack.cpp: In function 'int StackPush(Stack*, const void*)':<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:70:5: warning: no previous declaration for 'int StackPush(Stack*, const void*)' [-Wmissing-declarations]</font><br />
- int StackPush(Stack * stack, const void* value)<br />
-     ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:85:58: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]</font><br />
-     memcpy(stack -&gt; Data + (stack -&gt; Size ++) * stack -&gt; ItemSize,<br />
-                                                          ^<br />
-D:\C projects\Stack\stack.cpp: In function 'int StackPop(Stack*, void*)':<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:92:5: warning: no previous declaration for 'int StackPop(Stack*, void*)' [-Wmissing-declarations]</font><br />
- int StackPop(Stack * stack, void * value)<br />
-     ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:103:62: warning: pointer of type 'void *' used in arithmetic [-Wpointer-arith]</font><br />
-                stack -&gt; Data + (-- stack -&gt; Size) * stack -&gt; ItemSize,<br />
-                                                              ^<br />
-D:\C projects\Stack\stack.cpp: In function 'int stackRealocate(Stack*, size_t)':<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:125:32: warning: conversion to 'float' from 'size_t {aka unsigned int}' may alter its value [-Wconversion]</font><br />
-         if(stack -&gt; Capacity * STEP_INCREASE &lt; MAX_STEP)<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:295:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for (int i = 0; i &lt; str -&gt; length; i ++)<br />
                                 ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:126:65: warning: conversion to 'float' from 'size_t {aka unsigned int}' may alter its value [-Wconversion]</font><br />
-             calcCapacity = stack -&gt; Capacity *(1 + STEP_INCREASE);<br />
-                                                                 ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:126:46: warning: conversion to 'size_t {aka unsigned int}' from 'float' may alter its value [-Wconversion]</font><br />
-             calcCapacity = stack -&gt; Capacity *(1 + STEP_INCREASE);<br />
-                                              ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:133:32: warning: conversion to 'float' from 'size_t {aka unsigned int}' may alter its value [-Wconversion]</font><br />
-         if(stack -&gt; Capacity * STEP_INCREASE / (1 + STEP_INCREASE) &lt;= MAX_STEP)<br />
-                                ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:135:76: warning: conversion to 'float' from 'size_t {aka unsigned int}' may alter its value [-Wconversion]</font><br />
-             if(stack -&gt; Capacity / ((1 + STEP_INCREASE)*(1 + STEP_INCREASE)) &lt; capacity)<br />
-                                                                            ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:138:70: warning: conversion to 'float' from 'size_t {aka unsigned int}' may alter its value [-Wconversion]</font><br />
-                 calcCapacity = stack -&gt; Capacity / (1 + STEP_INCREASE);<br />
-                                                                      ^<br />
-<font color="#0000ff">D:\C projects\Stack\stack.cpp:138:50: warning: conversion to 'size_t {aka unsigned int}' from 'float' may alter its value [-Wconversion]</font><br />
-                 calcCapacity = stack -&gt; Capacity / (1 + STEP_INCREASE);<br />
-                                                  ^<br />
-D:\C projects\Stack\main.cpp: In function 'int main()':<br />
-<font color="#0000ff">D:\C projects\Stack\main.cpp:8:20: warning: missing initializer for member 'Stack::Data' [-Wmissing-field-initializers]</font><br />
-     Stack stack = {};<br />
-                    ^<br />
-<font color="#0000ff">D:\C projects\Stack\main.cpp:8:20: warning: missing initializer for member 'Stack::Capacity' [-Wmissing-field-initializers]</font><br />
-<font color="#0000ff">D:\C projects\Stack\main.cpp:8:20: warning: missing initializer for member 'Stack::Size' [-Wmissing-field-initializers]</font><br />
-<font color="#0000ff">D:\C projects\Stack\main.cpp:8:20: warning: missing initializer for member 'Stack::ItemSize' [-Wmissing-field-initializers]</font><br />
 ------------------------------------------------------------------------------------------------------<br />
-Autosaving to the Git repository in D:/C projects/Stack/.git-auto/... <br />
-Output size is 35,20 KB<br />
-<font color="#0000ff">Process terminated with status 0 (0 minutes, 1 seconds)</font><br />
-<font color="#0000ff">0 errors, 17 warnings (0 minutes, 1 seconds)</font><br />
+Autosaving to the Git repository in D:/C projects/Onegin/.git-auto/... <br />
+Output size is 40,54 KB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 0 seconds)</font><br />
+<font color="#0000ff">0 errors, 15 warnings (0 minutes, 0 seconds)</font><br />
 </tt>
 </body>
 </html>

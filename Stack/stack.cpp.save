@@ -3,7 +3,7 @@
 #include <string.h>
 #include <assert.h>
 
-enum
+enum Error
 {
     SUCCESS = 1,
     MEMORY_ALLOCATION_ERROR,
@@ -14,7 +14,7 @@ enum
 };
 
 
-const int DATA_POISON = 0xF0;
+const int DATA_POISON = 666;
 void *const POINTER_POISON = (void*)13;
 
 const int MAX_SIZE = 256;
@@ -45,7 +45,7 @@ int StackCtor (Stack * stack, const size_t capacity, const int itemSize)
     stack -> Capacity = capacity;
     stack -> ItemSize = itemSize;
 
-    return 1;
+    return SUCCESS;
 }
 
 int StackDtor(Stack * stack)
@@ -80,7 +80,7 @@ int StackPush(Stack * stack, const void* value)
             return error;
     }
 
-    printf("%d\n", stack -> Capacity);
+    printf("%d ", stack -> Capacity);
 
     memcpy(stack -> Data + (stack -> Size ++) * stack -> ItemSize,
            value,
@@ -104,7 +104,7 @@ int StackPop(Stack * stack, void * value)
                stack -> ItemSize);
         stackRealocate(stack, stack -> Size);
 
-        printf("%d\n", stack -> Capacity);
+        printf("%d ", stack -> Capacity);
 
         return SUCCESS;
     }
@@ -138,10 +138,12 @@ int stackRealocate(Stack * stack, size_t capacity)
                 calcCapacity = stack -> Capacity / (1 + STEP_INCREASE);
         }
         else
+        {
             if(stack -> Capacity - 2 * MAX_STEP < capacity)
                 return SUCCESS;
             else
                 calcCapacity = stack -> Capacity - MAX_STEP;
+        }
     }
 
 
