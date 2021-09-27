@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Onegin build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>27-09-2021 at 22:29.51</u><br />
+Build ended on: <u>27-09-2021 at 22:29.52</u><p />
+<b>-------------- Build: Debug in Onegin (compiler: GNU GCC (MinGW) Compiler - Strict + Save (SINGLE FILES ONLY, REGUIRES GIT))---------------</b><br />
+g++git-auto.bat "D:\C projects\Onegin\main.cpp" -o bin\Debug\Onegin.exe  -Wall -fexceptions  -g  -Wshadow -Winit-self -Wredundant-decls -Wcast-align -Wundef -Wfloat-equal -Winline -Wunreachable-code -Wmissing-declarations -Wmissing-include-dirs -Wswitch-enum -Wswitch-default -Weffc++ -Wmain -Wextra -Wall -g -pipe -fexceptions -Wcast-qual -Wconversion -Wctor-dtor-privacy -Wempty-body -Wformat-security -Wformat=2 -Wignored-qualifiers -Wlogical-op -Wmissing-field-initializers -Wnon-virtual-dtor -Woverloaded-virtual -Wpointer-arith -Wsign-promo -Wstack-usage=8192 -Wstrict-aliasing -Wstrict-null-sentinel -Wtype-limits -Wwrite-strings -D_DEBUG -D_EJUDGE_CLIENT_SIDE -D_EJC<br />
+------------------------------------------------------------------------------------------------------<br />
+Compilation ERRORS:<br />
+<br />
+D:\C projects\Onegin\main.cpp: In function 'StringList* getStringList(const char*, Error*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:112:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         if (strNumb &gt;= strList -&gt; length)<br />
+                                   ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:128:22: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+             buf[n++] = c;<br />
+                      ^<br />
+D:\C projects\Onegin\main.cpp: In function 'void printStringList(const StringList*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:166:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for (int i = 0; i &lt; strList -&gt; length; i++)<br />
+                                    ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:168:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         for (int j = 0; j &lt; strList -&gt; item [i] -&gt; length; j++)<br />
+                                                    ^<br />
+D:\C projects\Onegin\main.cpp: In function 'Error saveStringList(const char*, const StringList*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:185:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for (int i = 0; i &lt; strList -&gt; length; i++)<br />
+                                    ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:187:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+         for (int j = 0; j &lt; strList -&gt; item [i] -&gt; length; j++)<br />
+                                                    ^<br />
+D:\C projects\Onegin\main.cpp: In function 'int AlphabetCmp(const String**, const String**)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:219:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     while (i1 &lt; (* str1) -&gt; length &amp;&amp; i2 &lt; (* str2) -&gt; length)<br />
+                             ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:219:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     while (i1 &lt; (* str1) -&gt; length &amp;&amp; i2 &lt; (* str2) -&gt; length)<br />
+                                                        ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:232:30: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     return (i1 &lt; (* str1) -&gt; length)?<br />
+                              ^<br />
+D:\C projects\Onegin\main.cpp: In function 'int isUncmpChar(char)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:274:5: warning: no previous declaration for 'int isUncmpChar(char)' [-Wmissing-declarations]</font><br />
+ int isUncmpChar (const char c)<br />
+     ^<br />
+D:\C projects\Onegin\main.cpp: In function 'char tolower_(char)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:283:6: warning: no previous declaration for 'char tolower_(char)' [-Wmissing-declarations]</font><br />
+ char tolower_ (const char c)<br />
+      ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:286:24: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+         return c - 'A' + 'a';<br />
+                        ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:288:26: warning: conversion to 'char' from 'int' may alter its value [-Wconversion]</font><br />
+         return tolower (c);<br />
+                          ^<br />
+D:\C projects\Onegin\main.cpp: In function 'int isInformativeStr(const String*)':<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:291:5: warning: no previous declaration for 'int isInformativeStr(const String*)' [-Wmissing-declarations]</font><br />
+ int isInformativeStr (const String * str)<br />
+     ^<br />
+<font color="#0000ff">D:\C projects\Onegin\main.cpp:295:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]</font><br />
+     for (int i = 0; i &lt; str -&gt; length; i ++)<br />
+                                ^<br />
+------------------------------------------------------------------------------------------------------<br />
+Autosaving to the Git repository in D:/C projects/Onegin/.git-auto/... <br />
+Output size is 40,54 KB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minutes, 0 seconds)</font><br />
+<font color="#0000ff">0 errors, 15 warnings (0 minutes, 0 seconds)</font><br />
+</tt>
+</body>
+</html>
