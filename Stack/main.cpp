@@ -1,24 +1,39 @@
+#include "Stack.h"
+#include "Logs.h"
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.cpp"
 
+void print(FILE * output, void * item);
 
 int main()
 {
-    Stack stack = {};
-
-    StackCtor(&stack, 10, sizeof(int));
+    OpenLogs();
 
 
-    for(int i = 0; i < 1000 && StackPush(&stack, &i) == SUCCESS; i++)
+    Stack stk = {};
+
+    StackCtor(&stk, 10, int, print);
+
+
+    for(int i = 0; i < 1000 && StackPush(&stk, &i) == SUCCESS; i++)
         ;
  //   printf("\n\n");
 
     int a = 0;
-    for(int i = 0; StackPop(&stack, &a) == SUCCESS; i++)
+    for(int i = 0; StackPop(&stk, &a) == SUCCESS; i++)
         printf("%d\n", a);
 
-    StackDtor(&stack);
+    StackDtor(&stk);
+
+
+    CloseLogs();
 
     return 0;
 }
+
+void print(FILE * output, void * item)
+{
+    fprintf(output, "%d", *((int*) item));
+}
+

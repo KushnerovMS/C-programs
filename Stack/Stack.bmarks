@@ -2,13 +2,21 @@
 <BrowseTracker_layout_file>
 	<ActiveTarget name="Debug" />
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="221" topLine="0" />
-		<BrowseMarks positions="63,79,105,267,343,399,414" />
-		<Book_Marks positions="" />
+		<Cursor position="159" topLine="8" />
+		<BrowseMarks positions="63,79,105,223,234,257,333,389,404,18,99,428,82,182,99,423,116" />
 	</File>
-	<File name="stack.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="1876" topLine="22" />
-		<BrowseMarks positions="94,273,316,343,467,749,978,1347,1576,1615,1617,1738,1832,1977,2343,2681" />
-		<Book_Marks positions="" />
+	<File name="Logs.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="140" topLine="0" />
+	</File>
+	<File name="Stack.h" open="1" top="0" tabpos="3">
+		<Cursor position="463" topLine="3" />
+		<BrowseMarks positions="0,429,429,397" />
+	</File>
+	<File name="stack.cpp" open="1" top="1" tabpos="2">
+		<Cursor position="3228" topLine="68" />
+		<BrowseMarks positions="85,100,278,321,348,472,754,1624,1626,1747,1841,1918,1988,2356,2694,3011,3148" />
+	</File>
+	<File name="MacrosOverloaded.h" open="1" top="0" tabpos="4">
+		<Cursor position="505" topLine="0" />
 	</File>
 </BrowseTracker_layout_file>

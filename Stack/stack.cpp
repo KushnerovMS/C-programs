@@ -1,42 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
+#include "Stack.h"
 
-enum Error
+StackError StackCtor__ (Stack * stack, const size_t capacity, const int itemSize)
 {
-    SUCCESS = 0,
-    MEMORY_ALLOCATION_ERROR,
-    OUT_OF_BOUNDS_ERROR,
-    DESTRUCTED_STACK,
-    EXPANSION_DENIED,
-    NO_ITEMS_ERROR
-};
+    assert (stack);
 
-
-const int DATA_POISON = 666;
-void *const POINTER_POISON = (void*)13;
-
-const int MAX_SIZE = 256;
-const int MIN_SIZE = MAX_SIZE/64;
-const int MAX_STEP = MAX_SIZE / 8;
-const float STEP_INCREASE = 1;
-
-
-struct Stack
-{
-    void *Data;
-    size_t Capacity;
-    size_t Size;
-    int ItemSize;
-};
-
-
-int StackCtor (Stack * stack, const size_t capacity, const int itemSize)
-{
-    assert(stack);
-
-    if (!(stack -> Data = calloc(capacity, itemSize)))
+    if (!(stack -> Data = (char*) calloc (capacity, itemSize)))
         return MEMORY_ALLOCATION_ERROR;
 
     memset(stack -> Data, 0, capacity*itemSize);
@@ -45,10 +13,12 @@ int StackCtor (Stack * stack, const size_t capacity, const int itemSize)
     stack -> Capacity = capacity;
     stack -> ItemSize = itemSize;
 
+    StackDump (stack);
+
     return SUCCESS;
 }
 
-int StackDtor(Stack * stack)
+StackError StackDtor (Stack * stack)
 {
     assert(stack);
 
@@ -65,31 +35,29 @@ int StackDtor(Stack * stack)
 }
 
 
-int stackRealocate(Stack * stack, size_t capacity);
+StackError stackRealocate (Stack * stack, size_t capacity);
 
-int StackPush(Stack * stack, const void* value)
+StackError StackPush (Stack * stack, const void* value)
 {
     assert(stack);
 
-    //printf("%d ", stack -> Capacity);
-
-    int error = SUCCESS;
+    StackError error = SUCCESS;
     if(stack -> Size >= stack -> Capacity)
     {
         if((error = stackRealocate(stack, stack -> Size + 1)) != SUCCESS)
             return error;
     }
 
-    //printf("%d ", stack -> Capacity);
-
     memcpy(stack -> Data + (stack -> Size ++) * stack -> ItemSize,
            value,
            stack -> ItemSize);
 
+    StackDump(stack);
+
     return SUCCESS;
 }
 
-int StackPop(Stack * stack, void * value)
+StackError StackPop (Stack * stack, void * value)
 {
     assert(stack);
 
@@ -112,9 +80,9 @@ int StackPop(Stack * stack, void * value)
 }
 
 
-int stackRealocate(Stack * stack, size_t capacity)
+StackError stackRealocate (Stack * stack, size_t capacity)
 {
-    if(capacity > MAX_SIZE)
+    if(capacity > STACK_MAX_SIZE)
         return OUT_OF_BOUNDS_ERROR;
 
 
@@ -122,43 +90,68 @@ int stackRealocate(Stack * stack, size_t capacity)
 
     if(stack -> Capacity < capacity)
     {
-        if(stack -> Capacity * STEP_INCREASE < MAX_STEP)
-            calcCapacity = stack -> Capacity *(1 + STEP_INCREASE);
+        if(stack -> Capacity * STACK_STEP_INCREASE < STACK_MAX_STEP)
+            calcCapacity = stack -> Capacity *(1 + STACK_STEP_INCREASE);
         else
-            calcCapacity = stack -> Capacity + MAX_STEP;
+            calcCapacity = stack -> Capacity + STACK_MAX_STEP;
     }
 
     if(stack -> Capacity > capacity)
     {
-        if(stack -> Capacity * STEP_INCREASE / (1 + STEP_INCREASE) <= MAX_STEP)
+        if(stack -> Capacity * STACK_STEP_INCREASE / (1 + STACK_STEP_INCREASE) <= STACK_MAX_STEP)
         {
-            if(stack -> Capacity / ((1 + STEP_INCREASE)*(1 + STEP_INCREASE)) < capacity)
+            if(stack -> Capacity / ((1 + STACK_STEP_INCREASE)*(1 + STACK_STEP_INCREASE)) < capacity)
                 return SUCCESS;
             else
-                calcCapacity = stack -> Capacity / (1 + STEP_INCREASE);
+                calcCapacity = stack -> Capacity / (1 + STACK_STEP_INCREASE);
         }
         else
         {
-            if(stack -> Capacity - 2 * MAX_STEP < capacity)
+            if(stack -> Capacity - 2 * STACK_MAX_STEP < capacity)
                 return SUCCESS;
             else
-                calcCapacity = stack -> Capacity - MAX_STEP;
+                calcCapacity = stack -> Capacity - STACK_MAX_STEP;
         }
     }
 
 
-    if(calcCapacity <= MIN_SIZE)
+    if(calcCapacity <= STACK_MIN_SIZE)
         return SUCCESS;
-    if(calcCapacity > MAX_SIZE)
-        calcCapacity = MAX_SIZE;
+    if(calcCapacity > STACK_MAX_SIZE)
+        calcCapacity = STACK_MAX_SIZE;
 
 
     if(char * buff = (char*)realloc(stack -> Data, calcCapacity * stack -> ItemSize))
     {
         stack -> Data = buff;
         stack -> Capacity = calcCapacity;
+        memset (stack -> Data + stack -> ItemSize * stack -> Size,
+                0,
+                (stack -> Capacity - stack -> Size) * stack -> ItemSize);
         return SUCCESS;
     }
     else
         return MEMORY_ALLOCATION_ERROR;
+}
+
+void StackDump (const Stack * stack)
+{
+    extern FILE * Logs;
+    fprintf (Logs, "stack<%s>[0x%X]", stack -> dtype, stack);
+    if (stack)
+    {
+        fprintf (Logs, "\"%s\" at %s() at %s (%d)\n", stack -> dname, stack -> dfunction, stack -> dfile, stack -> dline);
+        fprintf (Logs, "{\n");
+        fprintf (Logs, "\tsize = %d\n", stack -> Size);
+        fprintf (Logs, "\tcapacity = %d\n", stack -> Capacity);
+        fprintf (Logs, "\tdata[0x%X]\n", stack -> Data);
+        if (stack -> Data != nullptr)
+            for (int i = 0; i < stack -> Capacity; i++)
+            {
+                fprintf (Logs, "\t\t[%d] = ", i);
+                (*stack -> dprintItem) (Logs, (void*) (stack -> Data + i * stack -> ItemSize));
+                fprintf (Logs, "\n");
+            }
+        fprintf (Logs, "}\n\n");
+    }
 }
